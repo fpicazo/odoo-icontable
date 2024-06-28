@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_bank_diot_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.bank.diot.tree.inherit</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="l10n_mx_reports.res_partner_account_diot_form_oml"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="credit_allowed_days"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
