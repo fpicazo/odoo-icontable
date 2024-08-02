@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="custom_new_module_form.ListView" t-inherit="web.ListView" t-inherit-mode="primary">
+        <xpath expr="//button[hasclass('o_list_button_add')]" position="after">
+            <button type="button" class="btn btn-primary" t-on-click="OnPopupClick">
+            
+
+                Crear cotizacion manual
+            </button>
+        </xpath>
+    </t>
+</templates>

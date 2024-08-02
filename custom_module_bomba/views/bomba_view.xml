@@ -1,0 +1,53 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_bomba_form" model="ir.ui.view">
+        <field name="name">bomba.form</field>
+        <field name="model">bomba</field>
+        <field name="arch" type="xml">
+            <form string="Bomba">
+                <sheet>
+                    <group>
+                        <field name="driver_id"/>
+                        <field name="service_type"/>
+                        <field name="result"/>
+                        <field name="truck_id"/>
+                    </group>
+                    <group>
+                        <field name="picture_before" widget="image"/>
+                        <field name="picture_after" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_bomba_tree" model="ir.ui.view">
+        <field name="name">bomba.tree</field>
+        <field name="model">bomba</field>
+        <field name="arch" type="xml">
+            <tree string="Bomba">
+                <field name="driver_id"/>
+                <field name="service_type"/>
+                <field name="result"/>
+                <field name="truck_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_bomba" model="ir.actions.act_window">
+        <field name="name">Bomba</field>
+        <field name="res_model">bomba</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea su primer registro
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_bomba_root" name="Bomba" sequence="10" web_icon="custom_module_bomba,static/description/icon.png"/>
+    <menuitem id="menu_bomba" name="Bomba" parent="menu_bomba_root" action="action_bomba"/>
+</odoo>

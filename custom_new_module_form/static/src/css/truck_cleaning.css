@@ -1,0 +1,5 @@
+.o_menu_icon.custom_new_module_form {
+    background-image: url('/custom_new_module_form/static/description/icon.png') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,40 @@
+<odoo>
+    <template id="report_viajes_document">
+        <t t-call="web.basic_layout">
+            <t t-set="doc_ids" t-value="docids"/>
+            <t t-set="doc_model" t-value="doc_model"/>
+            <t t-set="docs" t-value="docs"/>
+            <div class="page">
+                <h2>Viajes Report</h2>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Chofer</th>
+                            <th>Tipo de Servicio</th>
+                            <th>Resultado</th>
+                            <th>Numero de Jaula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="viaje">
+                            <tr>
+                                <td>
+                                    <span t-field="viaje.driver_id.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="viaje.service_type"/>
+                                </td>
+                                <td>
+                                    <span t-field="viaje.result"/>
+                                </td>
+                                <td>
+                                    <span t-field="viaje.truck_id"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

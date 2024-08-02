@@ -1,0 +1,61 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_bodega_form" model="ir.ui.view">
+        <field name="name">bodega.form</field>
+        <field name="model">bodega</field>
+        <field name="arch" type="xml">
+            <form string="Bodega">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="idIentificacion"/>
+                        <field name="calle"/>
+                        <field name="numeroInt"/>
+                        <field name="numeroExt"/>
+                        <field name="colonia"/>
+                        <field name="codigoPostal"/>
+                        <field name="ciudad"/>
+                        <field name="estado"/>
+
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_bodega_tree" model="ir.ui.view">
+        <field name="name">bodega.tree</field>
+        <field name="model">bodega</field>
+        <field name="arch" type="xml">
+            <tree string="Bodega">
+                <field name="nombre"/>
+                        <field name="idIentificacion"/>
+                        <field name="calle"/>
+                        <field name="numeroInt"/>
+                        <field name="numeroExt"/>
+                        <field name="colonia"/>
+                        <field name="codigoPostal"/>
+                        <field name="ciudad"/>
+                        <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_bodega" model="ir.actions.act_window">
+        <field name="name">Bodega</field>
+        <field name="res_model">bodega</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea su primer registro
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_bodega_root" name="Bodega" sequence="10" web_icon="custom_module_bodega,static/description/icon.png"/>
+    <menuitem id="menu_bodega" name="Bodega" parent="menu_bodega_root" action="action_bodega"/>
+</odoo>

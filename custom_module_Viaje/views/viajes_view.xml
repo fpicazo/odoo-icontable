@@ -1,0 +1,68 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_viajes_form" model="ir.ui.view">
+        <field name="name">viajes.form</field>
+        <field name="model">viajes</field>
+        <field name="arch" type="xml">
+            <form string="Viajes">
+                <sheet>
+                    <group>
+                        <field name="chofer_id"/>
+                        <field name="fecha"/>
+                        <field name="comments"/>
+                        <field name="equipment_id"/>
+                    </group>
+                    <group>
+                        <field name="line_ids">
+                            <tree editable="bottom">
+                                <field name="bodega_origin_id"/>
+                                <field name="bodega_dest_id"/>
+                                <field name="km_distance"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_viajes_tree" model="ir.ui.view">
+        <field name="name">viajes.tree</field>
+        <field name="model">viajes</field>
+        <field name="arch" type="xml">
+            <tree string="Viajes">
+                <field name="fecha"/>
+                <field name="comments"/>
+                <field name="equipment_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_viajes_cleaning" model="ir.actions.act_window">
+        <field name="name">Viajes</field>
+        <field name="res_model">viajes</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea su primer registro
+            </p>
+        </field>
+    </record>
+
+    <!-- Report Action -->
+    <record id="action_report_viajes" model="ir.actions.report">
+        <field name="name">Viajes Report</field>
+        <field name="model">viajes</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">custom_module_viaje.report_viajes_document</field>
+        <field name="report_file">custom_module_viaje.report_viajes_document</field>
+        <field name="print_report_name">'Viajes Report - %s' % (object.display_name)</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_viajes_root" name="Viajes" sequence="10" web_icon="custom_module_Viaje,static/description/icon.png"/>
+    <menuitem id="menu_viajes" name="Viajes" parent="menu_viajes_root" action="action_viajes_cleaning"/>
+    <menuitem id="menu_viajes_report" name="Viajes Report" parent="menu_viajes_root" action="action_report_viajes"/>
+</odoo>
